@@ -2,9 +2,10 @@ from flask import Flask,request,jsonify
 from config import Development,Build
 from flaskext.mysql import MySQL
 
+
 app = Flask(__name__)
 
-app.config.from_object(Development)
+app.config.from_object(Build)
 
 mysql= MySQL(app)
 
@@ -84,4 +85,4 @@ def contact(id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
